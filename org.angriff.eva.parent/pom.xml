@@ -25,6 +25,11 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/eclipse/updates/3.7</url>
 		</repository>
+		<repository>
+			<id>emf</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/emf/updates</url>
+		</repository>
 	</repositories>
 	
 	<properties>
@@ -71,10 +76,10 @@
 					<pomDependencies>consider</pomDependencies>
 					<target>
 						<artifact>
-							<groupId>${project.parent.groupId}</groupId>
-							<artifactId>${project.parent.artifactId}</artifactId>
-							<version>${project.parent.version}</version>
-							<classifier>tychogithub</classifier>
+							<groupId>org.angriff.eva</groupId>
+							<artifactId>parent</artifactId>
+							<version>0.0.1-SNAPSHOT</version>
+							<classifier>org.angriff.eva</classifier>
 						</artifact>
 					</target>
 					<environments>
