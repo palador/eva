@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.6"?>
+
+<target name="org.angriff.eva" sequenceNumber="5">
+<locations>
+<location includeAllPlatforms="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.sdk.ide" version="3.7.2.M20120208-0800"/>
+<repository location="http://download.eclipse.org/eclipse/updates/3.7"/>
+</location>
+<location includeAllPlatforms="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.ecore.feature.group" version="2.5.0.v200906151043"/>
+<unit id="org.eclipse.emf.feature.group" version="2.5.0.v200906151043"/>
+<unit id="org.eclipse.emf.sdk.feature.group" version="2.5.0.v200906151043"/>
+<unit id="org.eclipse.emf.common.feature.group" version="2.5.0.v200906151043"/>
+<unit id="org.eclipse.emf.doc.feature.group" version="2.5.0.v200906151043"/>
+<unit id="org.eclipse.emf.ecore.edit.feature.group" version="2.5.0.v200906151043"/>
+<unit id="org.eclipse.emf.edit.feature.group" version="2.5.0.v200906151043"/>
+<unit id="org.eclipse.emf.source.feature.group" version="2.5.0.v200906151043"/>
+<repository location="http://download.eclipse.org/modeling/emf/updates/"/>
+</location>
+</locations>
+</target>
