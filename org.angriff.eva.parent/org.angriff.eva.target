@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.6"?>
 
-<target name="org.angriff.eva" sequenceNumber="5">
+<target name="org.angriff.eva" sequenceNumber="7">
 <locations>
-<location includeAllPlatforms="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.sdk.ide" version="3.7.2.M20120208-0800"/>
-<repository location="http://download.eclipse.org/eclipse/updates/3.7"/>
-</location>
 <location includeAllPlatforms="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.emf.ecore.feature.group" version="2.5.0.v200906151043"/>
 <unit id="org.eclipse.emf.feature.group" version="2.5.0.v200906151043"/>
@@ -17,6 +13,16 @@
 <unit id="org.eclipse.emf.edit.feature.group" version="2.5.0.v200906151043"/>
 <unit id="org.eclipse.emf.source.feature.group" version="2.5.0.v200906151043"/>
 <repository location="http://download.eclipse.org/modeling/emf/updates/"/>
+</location>
+<location includeAllPlatforms="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.platform.ide" version="3.7.2.M20120208-0800"/>
+<unit id="org.eclipse.platform.sdk" version="3.7.2.M20120208-0800"/>
+<unit id="org.eclipse.sdk.ide" version="3.7.2.M20120208-0800"/>
+<repository location="http://download.eclipse.org/eclipse/updates/3.7"/>
+</location>
+<location includeAllPlatforms="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.ecoretools.sdk.feature.group" version="1.0.0.v20110608-1633"/>
+<repository location="http://download.eclipse.org/releases/indigo"/>
 </location>
 </locations>
 </target>
