@@ -82,6 +82,18 @@ public class EvaModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case EvaModelPackage.EVA_PORT: {
+				EvaPort evaPort = (EvaPort)theEObject;
+				T result = caseEvaPort(evaPort);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EvaModelPackage.EVA_PIN: {
+				EvaPin evaPin = (EvaPin)theEObject;
+				T result = caseEvaPin(evaPin);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case EvaModelPackage.EVA_PARAMETER: {
 				EvaParameter evaParameter = (EvaParameter)theEObject;
 				T result = caseEvaParameter(evaParameter);
@@ -125,6 +137,36 @@ public class EvaModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEvaComponentMeta(EvaComponentMeta object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Eva Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Eva Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEvaPort(EvaPort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Eva Pin</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Eva Pin</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEvaPin(EvaPin object) {
 		return null;
 	}
 

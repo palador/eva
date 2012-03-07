@@ -14,13 +14,17 @@ import org.angriff.eva.core.model.EvaParameter;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -30,7 +34,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.angriff.eva.core.model.impl.EvaComponentFactoryMetaImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.angriff.eva.core.model.impl.EvaComponentFactoryMetaImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.angriff.eva.core.model.impl.EvaComponentFactoryMetaImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link org.angriff.eva.core.model.impl.EvaComponentFactoryMetaImpl#getInstanceParameters <em>Instance Parameters</em>}</li>
  * </ul>
@@ -40,24 +44,24 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class EvaComponentFactoryMetaImpl extends EObjectImpl implements EvaComponentFactoryMeta {
 	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ID_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String id = ID_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
@@ -80,7 +84,7 @@ public class EvaComponentFactoryMetaImpl extends EObjectImpl implements EvaCompo
 	protected String version = VERSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInstanceParameters() <em>Instance Parameters</em>}' reference list.
+	 * The cached value of the '{@link #getInstanceParameters() <em>Instance Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInstanceParameters()
@@ -113,8 +117,8 @@ public class EvaComponentFactoryMetaImpl extends EObjectImpl implements EvaCompo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getId() {
-		return id;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -122,11 +126,11 @@ public class EvaComponentFactoryMetaImpl extends EObjectImpl implements EvaCompo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EvaModelPackage.EVA_COMPONENT_FACTORY_META__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, EvaModelPackage.EVA_COMPONENT_FACTORY_META__NAME, oldName, name));
 	}
 
 	/**
@@ -157,7 +161,7 @@ public class EvaComponentFactoryMetaImpl extends EObjectImpl implements EvaCompo
 	 */
 	public EList<EvaParameter> getInstanceParameters() {
 		if (instanceParameters == null) {
-			instanceParameters = new EObjectResolvingEList<EvaParameter>(EvaParameter.class, this, EvaModelPackage.EVA_COMPONENT_FACTORY_META__INSTANCE_PARAMETERS);
+			instanceParameters = new EObjectContainmentEList<EvaParameter>(EvaParameter.class, this, EvaModelPackage.EVA_COMPONENT_FACTORY_META__INSTANCE_PARAMETERS);
 		}
 		return instanceParameters;
 	}
@@ -168,10 +172,24 @@ public class EvaComponentFactoryMetaImpl extends EObjectImpl implements EvaCompo
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__INSTANCE_PARAMETERS:
+				return ((InternalEList<?>)getInstanceParameters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__ID:
-				return getId();
+			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__NAME:
+				return getName();
 			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__VERSION:
 				return getVersion();
 			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__INSTANCE_PARAMETERS:
@@ -189,8 +207,8 @@ public class EvaComponentFactoryMetaImpl extends EObjectImpl implements EvaCompo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__ID:
-				setId((String)newValue);
+			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__NAME:
+				setName((String)newValue);
 				return;
 			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__VERSION:
 				setVersion((String)newValue);
@@ -211,8 +229,8 @@ public class EvaComponentFactoryMetaImpl extends EObjectImpl implements EvaCompo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__ID:
-				setId(ID_EDEFAULT);
+			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__VERSION:
 				setVersion(VERSION_EDEFAULT);
@@ -232,8 +250,8 @@ public class EvaComponentFactoryMetaImpl extends EObjectImpl implements EvaCompo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 			case EvaModelPackage.EVA_COMPONENT_FACTORY_META__INSTANCE_PARAMETERS:
@@ -252,8 +270,8 @@ public class EvaComponentFactoryMetaImpl extends EObjectImpl implements EvaCompo
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (id: ");
-		result.append(id);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(", version: ");
 		result.append(version);
 		result.append(')');

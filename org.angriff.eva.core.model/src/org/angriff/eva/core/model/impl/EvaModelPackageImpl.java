@@ -9,11 +9,14 @@ package org.angriff.eva.core.model.impl;
 import org.angriff.eva.core.model.EvaArgument;
 import org.angriff.eva.core.model.EvaComponentFactoryMeta;
 import org.angriff.eva.core.model.EvaComponentMeta;
+import org.angriff.eva.core.model.EvaComponentType;
 import org.angriff.eva.core.model.EvaModelFactory;
 import org.angriff.eva.core.model.EvaModelPackage;
 import org.angriff.eva.core.model.EvaParameter;
 import org.angriff.eva.core.model.EvaParameterType;
 
+import org.angriff.eva.core.model.EvaPin;
+import org.angriff.eva.core.model.EvaPort;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -48,6 +51,20 @@ public class EvaModelPackageImpl extends EPackageImpl implements EvaModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass evaPortEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass evaPinEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass evaParameterEClass = null;
 
 	/**
@@ -56,6 +73,13 @@ public class EvaModelPackageImpl extends EPackageImpl implements EvaModelPackage
 	 * @generated
 	 */
 	private EClass evaArgumentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum evaComponentTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,7 +163,7 @@ public class EvaModelPackageImpl extends EPackageImpl implements EvaModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEvaComponentFactoryMeta_Id() {
+	public EAttribute getEvaComponentFactoryMeta_Name() {
 		return (EAttribute)evaComponentFactoryMetaEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -193,6 +217,132 @@ public class EvaModelPackageImpl extends EPackageImpl implements EvaModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEvaComponentMeta_InputPorts() {
+		return (EReference)evaComponentMetaEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEvaComponentMeta_OutputPorts() {
+		return (EReference)evaComponentMetaEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEvaComponentMeta_Synchronous() {
+		return (EAttribute)evaComponentMetaEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEvaComponentMeta_Serializable() {
+		return (EAttribute)evaComponentMetaEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEvaComponentMeta_Stateless() {
+		return (EAttribute)evaComponentMetaEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEvaPort() {
+		return evaPortEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEvaPort_Name() {
+		return (EAttribute)evaPortEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEvaPort_Pins() {
+		return (EReference)evaPortEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEvaPin() {
+		return evaPinEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEvaPin_Name() {
+		return (EAttribute)evaPinEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEvaPin_Port() {
+		return (EReference)evaPinEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEvaPin_Type() {
+		return (EAttribute)evaPinEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEvaPin_ValidatorClass() {
+		return (EAttribute)evaPinEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEvaPin_ValidatorDetail() {
+		return (EAttribute)evaPinEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEvaParameter() {
 		return evaParameterEClass;
 	}
@@ -229,8 +379,17 @@ public class EvaModelPackageImpl extends EPackageImpl implements EvaModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEvaArgument_Name() {
+		return (EAttribute)evaArgumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getEvaArgument_Parameter() {
-		return (EReference)evaArgumentEClass.getEStructuralFeatures().get(0);
+		return (EReference)evaArgumentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -239,7 +398,16 @@ public class EvaModelPackageImpl extends EPackageImpl implements EvaModelPackage
 	 * @generated
 	 */
 	public EAttribute getEvaArgument_Value() {
-		return (EAttribute)evaArgumentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)evaArgumentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getEvaComponentType() {
+		return evaComponentTypeEEnum;
 	}
 
 	/**
@@ -280,23 +448,41 @@ public class EvaModelPackageImpl extends EPackageImpl implements EvaModelPackage
 
 		// Create classes and their features
 		evaComponentFactoryMetaEClass = createEClass(EVA_COMPONENT_FACTORY_META);
-		createEAttribute(evaComponentFactoryMetaEClass, EVA_COMPONENT_FACTORY_META__ID);
+		createEAttribute(evaComponentFactoryMetaEClass, EVA_COMPONENT_FACTORY_META__NAME);
 		createEAttribute(evaComponentFactoryMetaEClass, EVA_COMPONENT_FACTORY_META__VERSION);
 		createEReference(evaComponentFactoryMetaEClass, EVA_COMPONENT_FACTORY_META__INSTANCE_PARAMETERS);
 
 		evaComponentMetaEClass = createEClass(EVA_COMPONENT_META);
 		createEReference(evaComponentMetaEClass, EVA_COMPONENT_META__FACTORY);
 		createEReference(evaComponentMetaEClass, EVA_COMPONENT_META__FACTORY_ARGUMENTS);
+		createEReference(evaComponentMetaEClass, EVA_COMPONENT_META__INPUT_PORTS);
+		createEReference(evaComponentMetaEClass, EVA_COMPONENT_META__OUTPUT_PORTS);
+		createEAttribute(evaComponentMetaEClass, EVA_COMPONENT_META__STATELESS);
+		createEAttribute(evaComponentMetaEClass, EVA_COMPONENT_META__SYNCHRONOUS);
+		createEAttribute(evaComponentMetaEClass, EVA_COMPONENT_META__SERIALIZABLE);
+
+		evaPortEClass = createEClass(EVA_PORT);
+		createEAttribute(evaPortEClass, EVA_PORT__NAME);
+		createEReference(evaPortEClass, EVA_PORT__PINS);
+
+		evaPinEClass = createEClass(EVA_PIN);
+		createEAttribute(evaPinEClass, EVA_PIN__NAME);
+		createEReference(evaPinEClass, EVA_PIN__PORT);
+		createEAttribute(evaPinEClass, EVA_PIN__TYPE);
+		createEAttribute(evaPinEClass, EVA_PIN__VALIDATOR_CLASS);
+		createEAttribute(evaPinEClass, EVA_PIN__VALIDATOR_DETAIL);
 
 		evaParameterEClass = createEClass(EVA_PARAMETER);
 		createEAttribute(evaParameterEClass, EVA_PARAMETER__NAME);
 		createEAttribute(evaParameterEClass, EVA_PARAMETER__TYPE);
 
 		evaArgumentEClass = createEClass(EVA_ARGUMENT);
+		createEAttribute(evaArgumentEClass, EVA_ARGUMENT__NAME);
 		createEReference(evaArgumentEClass, EVA_ARGUMENT__PARAMETER);
 		createEAttribute(evaArgumentEClass, EVA_ARGUMENT__VALUE);
 
 		// Create enums
+		evaComponentTypeEEnum = createEEnum(EVA_COMPONENT_TYPE);
 		evaParameterTypeEEnum = createEEnum(EVA_PARAMETER_TYPE);
 	}
 
@@ -331,23 +517,54 @@ public class EvaModelPackageImpl extends EPackageImpl implements EvaModelPackage
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(evaComponentFactoryMetaEClass, EvaComponentFactoryMeta.class, "EvaComponentFactoryMeta", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEvaComponentFactoryMeta_Id(), ecorePackage.getEString(), "id", null, 1, 1, EvaComponentFactoryMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEvaComponentFactoryMeta_Name(), ecorePackage.getEString(), "name", null, 1, 1, EvaComponentFactoryMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEvaComponentFactoryMeta_Version(), ecorePackage.getEString(), "version", null, 1, 1, EvaComponentFactoryMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEvaComponentFactoryMeta_InstanceParameters(), this.getEvaParameter(), null, "instanceParameters", null, 0, -1, EvaComponentFactoryMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEvaComponentFactoryMeta_InstanceParameters(), this.getEvaParameter(), null, "instanceParameters", null, 0, -1, EvaComponentFactoryMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEvaComponentFactoryMeta_InstanceParameters().getEKeys().add(this.getEvaParameter_Name());
 
 		initEClass(evaComponentMetaEClass, EvaComponentMeta.class, "EvaComponentMeta", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEvaComponentMeta_Factory(), this.getEvaComponentMeta(), null, "factory", null, 1, 1, EvaComponentMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEvaComponentMeta_FactoryArguments(), this.getEvaArgument(), null, "factoryArguments", null, 0, -1, EvaComponentMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEvaComponentMeta_FactoryArguments(), this.getEvaArgument(), null, "factoryArguments", null, 0, -1, EvaComponentMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEvaComponentMeta_FactoryArguments().getEKeys().add(this.getEvaArgument_Name());
+		initEReference(getEvaComponentMeta_InputPorts(), this.getEvaPort(), null, "inputPorts", null, 0, -1, EvaComponentMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEvaComponentMeta_InputPorts().getEKeys().add(this.getEvaPort_Name());
+		initEReference(getEvaComponentMeta_OutputPorts(), this.getEvaPort(), null, "outputPorts", null, 0, -1, EvaComponentMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEvaComponentMeta_OutputPorts().getEKeys().add(this.getEvaPort_Name());
+		initEAttribute(getEvaComponentMeta_Stateless(), ecorePackage.getEBoolean(), "stateless", null, 1, 1, EvaComponentMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEvaComponentMeta_Synchronous(), ecorePackage.getEBoolean(), "synchronous", null, 1, 1, EvaComponentMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEvaComponentMeta_Serializable(), ecorePackage.getEBoolean(), "serializable", null, 1, 1, EvaComponentMeta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(evaPortEClass, EvaPort.class, "EvaPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEvaPort_Name(), ecorePackage.getEString(), "name", null, 1, 1, EvaPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEvaPort_Pins(), this.getEvaPin(), this.getEvaPin_Port(), "pins", null, 1, -1, EvaPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getEvaPort_Pins().getEKeys().add(this.getEvaPin_Name());
+
+		initEClass(evaPinEClass, EvaPin.class, "EvaPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEvaPin_Name(), ecorePackage.getEString(), "name", null, 1, 1, EvaPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEvaPin_Port(), this.getEvaPort(), this.getEvaPort_Pins(), "port", null, 1, 1, EvaPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEvaPin_Type(), ecorePackage.getEString(), "type", null, 1, 1, EvaPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEvaPin_ValidatorClass(), ecorePackage.getEString(), "validatorClass", null, 1, 1, EvaPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEvaPin_ValidatorDetail(), ecorePackage.getEString(), "validatorDetail", null, 1, 1, EvaPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(evaParameterEClass, EvaParameter.class, "EvaParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEvaParameter_Name(), ecorePackage.getEString(), "name", null, 1, 1, EvaParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEvaParameter_Type(), this.getEvaParameterType(), "type", null, 1, 1, EvaParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(evaArgumentEClass, EvaArgument.class, "EvaArgument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEvaArgument_Name(), ecorePackage.getEString(), "name", null, 1, 1, EvaArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEvaArgument_Parameter(), this.getEvaParameter(), null, "parameter", null, 1, 1, EvaArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEvaArgument_Value(), ecorePackage.getEString(), "value", null, 1, 1, EvaArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
+		initEEnum(evaComponentTypeEEnum, EvaComponentType.class, "EvaComponentType");
+		addEEnumLiteral(evaComponentTypeEEnum, EvaComponentType.CONSTANT);
+		addEEnumLiteral(evaComponentTypeEEnum, EvaComponentType.PRINTER);
+		addEEnumLiteral(evaComponentTypeEEnum, EvaComponentType.FUNCTION);
+		addEEnumLiteral(evaComponentTypeEEnum, EvaComponentType.SWITCH);
+		addEEnumLiteral(evaComponentTypeEEnum, EvaComponentType.GENERATOR);
+		addEEnumLiteral(evaComponentTypeEEnum, EvaComponentType.STORAGE);
+		addEEnumLiteral(evaComponentTypeEEnum, EvaComponentType.AGGREGATOR);
+
 		initEEnum(evaParameterTypeEEnum, EvaParameterType.class, "EvaParameterType");
 		addEEnumLiteral(evaParameterTypeEEnum, EvaParameterType.STRING);
 		addEEnumLiteral(evaParameterTypeEEnum, EvaParameterType.INTEGER);

@@ -44,6 +44,24 @@ public interface EvaModelFactory extends EFactory {
 	EvaComponentMeta createEvaComponentMeta();
 
 	/**
+	 * Returns a new object of class '<em>Eva Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Eva Port</em>'.
+	 * @generated
+	 */
+	EvaPort createEvaPort();
+
+	/**
+	 * Returns a new object of class '<em>Eva Pin</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Eva Pin</em>'.
+	 * @generated
+	 */
+	EvaPin createEvaPin();
+
+	/**
 	 * Returns a new object of class '<em>Eva Parameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

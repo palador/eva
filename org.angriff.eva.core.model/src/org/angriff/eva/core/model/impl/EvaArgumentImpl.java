@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.angriff.eva.core.model.impl.EvaArgumentImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.angriff.eva.core.model.impl.EvaArgumentImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link org.angriff.eva.core.model.impl.EvaArgumentImpl#getValue <em>Value</em>}</li>
  * </ul>
@@ -33,6 +34,26 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * @generated
  */
 public class EvaArgumentImpl extends EObjectImpl implements EvaArgument {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -80,6 +101,27 @@ public class EvaArgumentImpl extends EObjectImpl implements EvaArgument {
 	@Override
 	protected EClass eStaticClass() {
 		return EvaModelPackage.Literals.EVA_ARGUMENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EvaModelPackage.EVA_ARGUMENT__NAME, oldName, name));
 	}
 
 	/**
@@ -149,6 +191,8 @@ public class EvaArgumentImpl extends EObjectImpl implements EvaArgument {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case EvaModelPackage.EVA_ARGUMENT__NAME:
+				return getName();
 			case EvaModelPackage.EVA_ARGUMENT__PARAMETER:
 				if (resolve) return getParameter();
 				return basicGetParameter();
@@ -166,6 +210,9 @@ public class EvaArgumentImpl extends EObjectImpl implements EvaArgument {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case EvaModelPackage.EVA_ARGUMENT__NAME:
+				setName((String)newValue);
+				return;
 			case EvaModelPackage.EVA_ARGUMENT__PARAMETER:
 				setParameter((EvaParameter)newValue);
 				return;
@@ -184,6 +231,9 @@ public class EvaArgumentImpl extends EObjectImpl implements EvaArgument {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case EvaModelPackage.EVA_ARGUMENT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case EvaModelPackage.EVA_ARGUMENT__PARAMETER:
 				setParameter((EvaParameter)null);
 				return;
@@ -202,6 +252,8 @@ public class EvaArgumentImpl extends EObjectImpl implements EvaArgument {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case EvaModelPackage.EVA_ARGUMENT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EvaModelPackage.EVA_ARGUMENT__PARAMETER:
 				return parameter != null;
 			case EvaModelPackage.EVA_ARGUMENT__VALUE:
@@ -220,7 +272,9 @@ public class EvaArgumentImpl extends EObjectImpl implements EvaArgument {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (value: ");
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", value: ");
 		result.append(value);
 		result.append(')');
 		return result.toString();

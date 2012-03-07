@@ -80,6 +80,14 @@ public class EvaModelAdapterFactory extends AdapterFactoryImpl {
 				return createEvaComponentMetaAdapter();
 			}
 			@Override
+			public Adapter caseEvaPort(EvaPort object) {
+				return createEvaPortAdapter();
+			}
+			@Override
+			public Adapter caseEvaPin(EvaPin object) {
+				return createEvaPinAdapter();
+			}
+			@Override
 			public Adapter caseEvaParameter(EvaParameter object) {
 				return createEvaParameterAdapter();
 			}
@@ -132,6 +140,34 @@ public class EvaModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEvaComponentMetaAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.angriff.eva.core.model.EvaPort <em>Eva Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.angriff.eva.core.model.EvaPort
+	 * @generated
+	 */
+	public Adapter createEvaPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.angriff.eva.core.model.EvaPin <em>Eva Pin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.angriff.eva.core.model.EvaPin
+	 * @generated
+	 */
+	public Adapter createEvaPinAdapter() {
 		return null;
 	}
 
